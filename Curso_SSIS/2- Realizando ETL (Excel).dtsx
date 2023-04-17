@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="2- Realizando ETL  Excel"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{C04E26E9-30D9-4A82-9DFA-041C761DF8F0}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{B4E297D9-BA4A-49E4-8559-2E7302441A2E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -403,11 +403,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto"
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
               description="Destino OLE DB"
-              name="PRD_ESCOLA_Ano_Poduto"
+              name="PRD_ESCOLA_Ano_Produto"
               usesDispositions="true"
               version="4">
               <properties>
@@ -418,7 +418,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Ano_Poduto]</property>
+                  name="OpenRowset">[dbo].[Marca_Produto]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -460,7 +460,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Connections[OleDbConnection]"
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
                   connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
@@ -468,57 +468,51 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB]"
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Inputs[Entrada de Destino OLE DB]"
                   errorOrTruncationOperation="Inserir"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de Destino OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
                       cachedDataType="r8"
                       cachedName="product_id"
-                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
                       lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]" />
-                    <inputColumn
-                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].Columns[model_year]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="model_year"
-                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].ExternalColumns[model_year]"
-                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].Columns[model_year]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
                       dataType="i4"
                       name="product_id" />
                     <externalMetadataColumn
-                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].ExternalColumns[model_year]"
-                      dataType="i4"
-                      name="model_year" />
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[brand]"
+                      dataType="wstr"
+                      length="255"
+                      name="brand" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB]"
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Outputs[Saída de Erro de Destino OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Saída de Erro de Destino OLE DB"
-                  synchronousInputId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB]">
+                  synchronousInputId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Inputs[Entrada de Destino OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1250,7 +1244,7 @@
               startId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel]" />
             <path
               refId="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel4]"
-              endId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB]"
+              endId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto.Inputs[Entrada de Destino OLE DB]"
               name="Saída de Origem do Excel"
               startId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel]" />
           </paths>
@@ -1358,9 +1352,9 @@
           Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto"
           TopLeft="669.530303030303,172.757575757576" />
         <NodeLayout
-          Size="219,42"
-          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto"
-          TopLeft="187.575757575758,351.363636363636" />
+          Size="223,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto"
+          TopLeft="186.666666666667,352.272727272727" />
         <NodeLayout
           Size="232,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto"
@@ -1443,18 +1437,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel4]"
-          TopLeft="297.318181818182,298.136363636364">
+          TopLeft="297.863636363636,298.136363636364">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.2272727272726"
+              EndConnector="0,54.1363636363636"
               Start="0,0"
-              End="0,45.7272727272726">
+              End="0,46.6363636363636">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.7272727272726" />
+                    End="0,46.6363636363636" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1545,7 +1539,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto">
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
