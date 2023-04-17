@@ -1,0 +1,1600 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/16/2023 5:00:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-01UNAR94"
+  DTS:CreatorName="LAPTOP-01UNAR94\nelso"
+  DTS:DTSID="{62452930-6466-4E24-A3BD-0D14AC8CB3CE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="2- Realizando ETL  Excel"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{C04E26E9-30D9-4A82-9DFA-041C761DF8F0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3BC212C2-DEE7-47C9-9648-5512D81321F4}"
+      DTS:ObjectName="LAPTOP-01UNAR94.PRD_ESCOLA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-01UNAR94;Initial Catalog=PRD_ESCOLA;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Criando Conectores-{3BC212C2-DEE7-47C9-9648-5512D81321F4}LAPTOP-01UNAR94.PRD_ESCOLA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Fluxo Planilha Marketing -&gt; Database"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{0C7612E3-D12E-481A-9AE4-A066D6892883}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fluxo Planilha Marketing -&gt; Database"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem do Excel"
+              name="Ano_Produto"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">Ano_Produtos$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="O mapeamento de parâmetros no comando SQL para variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Connections[OleDbConnection]"
+                  connectionManagerID="{B8E3EBF0-07B2-4BFB-A522-C212265F86E3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Planilha Marketing]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel]"
+                  name="Saída de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].Columns[model_year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[model_year]"
+                      length="255"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].Columns[model_year]"
+                      name="model_year"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      dataType="r8"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[model_year]"
+                      dataType="wstr"
+                      length="255"
+                      name="model_year" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[model_year]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[model_year]"
+                      name="model_year" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem do Excel"
+              name="Marca_Produto"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">Marca_Produtos$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="O mapeamento de parâmetros no comando SQL para variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Connections[OleDbConnection]"
+                  connectionManagerID="{B8E3EBF0-07B2-4BFB-A522-C212265F86E3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Planilha Marketing]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel]"
+                  name="Saída de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].Columns[brand]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[brand]"
+                      length="255"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].Columns[brand]"
+                      name="brand"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      dataType="r8"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[brand]"
+                      dataType="wstr"
+                      length="255"
+                      name="brand" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[brand]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[brand]"
+                      name="brand" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem do Excel"
+              name="Modelo_Produto"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">Modelo_Produtos$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="O mapeamento de parâmetros no comando SQL para variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Connections[OleDbConnection]"
+                  connectionManagerID="{B8E3EBF0-07B2-4BFB-A522-C212265F86E3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Planilha Marketing]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel]"
+                  name="Saída de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].Columns[model]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[model]"
+                      length="255"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].Columns[model]"
+                      name="model"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      dataType="r8"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[model]"
+                      dataType="wstr"
+                      length="255"
+                      name="model" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[model]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[model]"
+                      name="model" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="PRD_ESCOLA_Ano_Poduto"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[Ano_Poduto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
+                      cachedDataType="r8"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].Columns[model_year]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="model_year"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].ExternalColumns[model_year]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel].Columns[model_year]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB].ExternalColumns[model_year]"
+                      dataType="i4"
+                      name="model_year" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="PRD_ESCOLA_Marca_Produto"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[Marca_Produto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
+                      cachedDataType="r8"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB].Columns[brand]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="brand"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[brand]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel].Columns[brand]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[brand]"
+                      dataType="wstr"
+                      length="255"
+                      name="brand" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="PRD_ESCOLA_Modelo_Produto"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[Modelo_Produto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
+                      cachedDataType="r8"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB].Columns[model]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="model"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[model]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel].Columns[model]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[model]"
+                      dataType="wstr"
+                      length="255"
+                      name="model" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="PRD_ESCOLA_Preco_Produto"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[Preco_Produto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
+                      cachedDataType="r8"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB].Columns[price]"
+                      cachedDataType="r8"
+                      cachedName="price"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[price]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].Columns[price]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB].ExternalColumns[price]"
+                      dataType="cy"
+                      name="price" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="PRD_ESCOLA_Produto_ID"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[Produto_ID]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
+                      cachedDataType="r8"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Origem do Excel].Columns[product_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem do Excel"
+              name="Preco_Produto"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">Preco_Produtos$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="O mapeamento de parâmetros no comando SQL para variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Connections[OleDbConnection]"
+                  connectionManagerID="{B8E3EBF0-07B2-4BFB-A522-C212265F86E3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Planilha Marketing]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel]"
+                  name="Saída de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].Columns[price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[price]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].Columns[price]"
+                      name="price"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      dataType="r8"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel].ExternalColumns[price]"
+                      dataType="r8"
+                      name="price" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[price]"
+                      dataType="r8"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[price]"
+                      name="price" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem do Excel"
+              name="Produto_ID"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">Produtos_id$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="O mapeamento de parâmetros no comando SQL para variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Connections[OleDbConnection]"
+                  connectionManagerID="{B8E3EBF0-07B2-4BFB-A522-C212265F86E3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Planilha Marketing]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Origem do Excel]"
+                  name="Saída de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Origem do Excel].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Origem do Excel].ExternalColumns[product_id]"
+                      dataType="r8"
+                      name="product_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Erro de Origem do Excel]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      dataType="r8"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Erro de Origem do Excel].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel]"
+              endId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Origem do Excel"
+              startId="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID.Outputs[Saída de Origem do Excel]" />
+            <path
+              refId="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel1]"
+              endId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Origem do Excel"
+              startId="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto.Outputs[Saída de Origem do Excel]" />
+            <path
+              refId="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel2]"
+              endId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Origem do Excel"
+              startId="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto.Outputs[Saída de Origem do Excel]" />
+            <path
+              refId="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel3]"
+              endId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Origem do Excel"
+              startId="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto.Outputs[Saída de Origem do Excel]" />
+            <path
+              refId="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel4]"
+              endId="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Origem do Excel"
+              startId="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto.Outputs[Saída de Origem do Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="263,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database"
+          TopLeft="136,65" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID"
+          TopLeft="208.272727272727,97.8181818181818" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID"
+          TopLeft="167.272727272727,172.818181818182" />
+        <EdgeLayout
+          Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel]"
+          TopLeft="275.272727272727,139.818181818182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Importar 5 tabelas -&gt; B.D.&#xD;&#xA;  Produto_ID&#xD;&#xA;  Modelo_Produto&#xD;&#xA;  Marca_Produto&#xD;&#xA;  Ano_Produto&#xD;&#xA;  Preco_Produto"
+          ParentId="Package\Fluxo Planilha Marketing -&gt; Database"
+          FontInfo="{assembly:Null}"
+          Size="166,120"
+          Id="d3f2cb6c-5895-4103-8c16-bb52a7514b1b"
+          TopLeft="18.2727272727273,93.8181818181818" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto"
+          TopLeft="435.272727272727,88.8181818181818" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto"
+          TopLeft="397.272727272727,174.818181818182" />
+        <EdgeLayout
+          Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel1]"
+          TopLeft="516.272727272727,130.818181818182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto"
+          TopLeft="674.772727272727,85.4848484848485" />
+        <NodeLayout
+          Size="234,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto"
+          TopLeft="669.530303030303,172.757575757576" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto"
+          TopLeft="187.575757575758,351.363636363636" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto"
+          TopLeft="539.393939393939,345.378787878788" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto"
+          TopLeft="226.060606060606,256.136363636364" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto"
+          TopLeft="563.863636363636,256.212121212121" />
+        <EdgeLayout
+          Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel2]"
+          TopLeft="751.772727272727,127.484848484848">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34.7575757575759,45.2727272727273"
+              Start="0,0"
+              End="34.7575757575759,37.7727272727273">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6363636363637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.6363636363637"
+                    Point2="0,22.6363636363637"
+                    Point3="4,22.6363636363637" />
+                  <mssgle:LineSegment
+                    End="30.7575757575759,22.6363636363637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.7575757575759,22.6363636363637"
+                    Point2="34.7575757575759,22.6363636363637"
+                    Point3="34.7575757575759,26.6363636363637" />
+                  <mssgle:LineSegment
+                    End="34.7575757575759,37.7727272727273" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel3]"
+          TopLeft="639.863636363636,298.212121212121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.530303030303,47.1666666666667"
+              Start="0,0"
+              End="15.530303030303,39.6666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5833333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5833333333333"
+                    Point2="0,23.5833333333333"
+                    Point3="4,23.5833333333333" />
+                  <mssgle:LineSegment
+                    End="11.530303030303,23.5833333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.530303030303,23.5833333333333"
+                    Point2="15.530303030303,23.5833333333333"
+                    Point3="15.530303030303,27.5833333333333" />
+                  <mssgle:LineSegment
+                    End="15.530303030303,39.6666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel4]"
+          TopLeft="297.318181818182,298.136363636364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.2272727272726"
+              Start="0,0"
+              End="0,45.7272727272726">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7272727272726" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Poduto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

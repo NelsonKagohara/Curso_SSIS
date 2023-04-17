@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-01UNAR94"
   DTS:CreatorName="LAPTOP-01UNAR94\nelso"
-  DTS:DTSID="{A6D71C90-C710-4DC7-8213-D8A17406B0FA}"
+  DTS:DTSID="{276B1C4D-AD94-4C5C-A954-F869CB174F61}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="1046"
-  DTS:ObjectName="Criando Conectores"
+  DTS:ObjectName="1- Criando Conectores"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{13F51A94-2ABF-44ED-A0F9-F305749370E5}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{687520C9-15E4-4215-AB4C-B940332A71D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -299,28 +299,11 @@
     design-time-name="Package\Tarefa Fluxo de Dados">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="130,42"
           Id="Package\Tarefa Fluxo de Dados\Marketting"
           TopLeft="204,62" />
-        <AnnotationLayout
-          Text="Criar conectores&#xD;&#xA;  - Excel (Marketing.xls)&#xD;&#xA;  - SQL Server (PRD_ESCOLA) "
-          ParentId="Package\Tarefa Fluxo de Dados"
-          Size="222,76"
-          Id="d3f2cb6c-5895-4103-8c16-bb52a7514b1b"
-          TopLeft="589,96">
-          <AnnotationLayout.FontInfo>
-            <mssge:FontInfo
-              Family="Tahoma"
-              Size="14.25"
-              Color="#FF000000">
-              <mssge:FontInfo.TextDecorations>
-                <av:TextDecorationCollection />
-              </mssge:FontInfo.TextDecorations>
-            </mssge:FontInfo>
-          </AnnotationLayout.FontInfo>
-        </AnnotationLayout>
         <NodeLayout
           Size="159,42"
           Id="Package\Tarefa Fluxo de Dados\Destino OLE DB"
@@ -330,7 +313,7 @@
           TopLeft="269.75,104">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,75"
               Start="0,0"
               End="0,67.5">
@@ -347,11 +330,18 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Criar conectores&#xA;  - Excel (Marketing.xls)&#xA;  - SQL Server (PRD_ESCOLA) "
+          ParentId="Package\Tarefa Fluxo de Dados"
+          FontInfo="{assembly:Null}"
+          Size="222,72"
+          Id="d3f2cb6c-5895-4103-8c16-bb52a7514b1b"
+          TopLeft="417,104" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarefa Fluxo de Dados\Marketting">
+    design-time-name="Package\Tarefa Fluxo de Dados\Destino OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -364,7 +354,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarefa Fluxo de Dados\Destino OLE DB">
+    design-time-name="Package\Tarefa Fluxo de Dados\Marketting">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
