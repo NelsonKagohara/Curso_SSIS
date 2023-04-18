@@ -1,31 +1,31 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/16/2023 5:00:14 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-01UNAR94"
   DTS:CreatorName="LAPTOP-01UNAR94\nelso"
-  DTS:DTSID="{62452930-6466-4E24-A3BD-0D14AC8CB3CE}"
+  DTS:DTSID="{97BD5911-558A-4946-8FB6-DE07911E30DF}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="1046"
   DTS:ObjectName="2- Realizando ETL  Excel"
   DTS:PackageType="5"
   DTS:VersionBuild="19"
-  DTS:VersionGUID="{17223B89-B481-4A95-9F95-617BB22BAA81}">
+  DTS:VersionGUID="{EF44B495-6C7C-43EC-BCC3-3FFBAFBEB30F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{3BC212C2-DEE7-47C9-9648-5512D81321F4}"
+      DTS:DTSID="{72AABDCB-BE8C-4D80-A0B2-1DD914B06140}"
       DTS:ObjectName="LAPTOP-01UNAR94.PRD_ESCOLA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-01UNAR94;Initial Catalog=PRD_ESCOLA;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Criando Conectores-{3BC212C2-DEE7-47C9-9648-5512D81321F4}LAPTOP-01UNAR94.PRD_ESCOLA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-01UNAR94;Initial Catalog=PRD_ESCOLA;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Criando Conectores-{72AABDCB-BE8C-4D80-A0B2-1DD914B06140}LAPTOP-01UNAR94.PRD_ESCOLA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -35,7 +35,7 @@
       DTS:refId="Package\Fluxo Planilha Marketing -&gt; Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{0C7612E3-D12E-481A-9AE4-A066D6892883}"
+      DTS:DTSID="{F2D18D80-A9E0-47FC-BB08-D0C4E23A2357}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Fluxo Planilha Marketing -&gt; Database"
