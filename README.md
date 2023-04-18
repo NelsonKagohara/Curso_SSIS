@@ -10,3 +10,4 @@
   + Produto_ID
   + Marca_Produto
   + Preco_Produto
+  + Ano_Produto
