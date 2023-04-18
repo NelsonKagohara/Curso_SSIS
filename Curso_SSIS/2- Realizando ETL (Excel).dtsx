@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="2- Realizando ETL  Excel"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{38BFDDDE-AEDB-4566-93E6-D7BCD8E6DFF9}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{17223B89-B481-4A95-9F95-617BB22BAA81}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1274,7 +1274,7 @@
         <NodeLayout
           Size="263,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database"
-          TopLeft="136,65" />
+          TopLeft="200,171" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
