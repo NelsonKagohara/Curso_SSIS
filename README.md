@@ -8,6 +8,7 @@
 
 2- Realizado ETL
   + Produto_ID
-  + Marca_Produto
-  + Preco_Produto
+  + Modelo_Prosuto
+  + Marca_Produto  
   + Ano_Produto
+  + Preco_Produto
