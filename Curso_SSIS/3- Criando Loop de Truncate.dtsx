@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="3- Criando Loop de Truncate"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{CE37E3B9-CC07-4BC1-A734-7071A00F5CF0}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{4188761B-C0A7-43D5-8659-F8027F726544}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1325,46 +1325,46 @@
         <NodeLayout
           Size="240,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto"
-          TopLeft="363.522727272727,150.818181818182" />
+          TopLeft="453.522727272727,211.818181818182" />
         <NodeLayout
           Size="234,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Marca_Produto"
-          TopLeft="626.780303030303,148.757575757576" />
+          TopLeft="716.780303030303,209.757575757576" />
         <NodeLayout
           Size="135,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID"
-          TopLeft="174.522727272727,73.8181818181818" />
+          TopLeft="264.522727272727,134.818181818182" />
         <NodeLayout
           Size="152,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto"
-          TopLeft="530.113636363636,232.212121212121" />
+          TopLeft="620.113636363636,293.212121212121" />
         <NodeLayout
           Size="223,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto"
-          TopLeft="136.25,328" />
+          TopLeft="226.25,389" />
         <NodeLayout
           Size="215,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID"
-          TopLeft="133.522727272727,148.818181818182" />
+          TopLeft="223.522727272727,209.818181818182" />
         <NodeLayout
           Size="160,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto"
-          TopLeft="401.522727272727,64.8181818181818" />
+          TopLeft="491.522727272727,125.818181818182" />
         <NodeLayout
           Size="154,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto"
-          TopLeft="670.022727272727,58.4848484848485" />
+          TopLeft="760.022727272727,119.484848484848" />
         <NodeLayout
           Size="232,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto"
-          TopLeft="494.643939393939,314.378787878788" />
+          TopLeft="584.643939393939,375.378787878788" />
         <NodeLayout
           Size="143,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto"
-          TopLeft="169.25,243" />
+          TopLeft="259.25,304" />
         <EdgeLayout
           Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel4]"
-          TopLeft="244.25,285">
+          TopLeft="334.25,346">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1386,7 +1386,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel3]"
-          TopLeft="608.378787878788,274.212121212121">
+          TopLeft="698.378787878788,335.212121212121">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1408,7 +1408,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel2]"
-          TopLeft="745.401515151515,100.484848484848">
+          TopLeft="835.401515151515,161.484848484848">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1430,7 +1430,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel1]"
-          TopLeft="482.522727272727,106.818181818182">
+          TopLeft="572.522727272727,167.818181818182">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1452,18 +1452,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel]"
-          TopLeft="241.522727272727,115.818181818182">
+          TopLeft="331.522727272727,176.818181818182">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33"
+              EndConnector="0,33.0000000000002"
               Start="0,0"
-              End="0,25.5">
+              End="0,25.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5" />
+                    End="0,25.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
