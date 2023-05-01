@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="7- Criando Pacote Main  Prncipal"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{11E40F7A-9971-464C-851D-F616B81990AB}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{B1B77AC5-7769-4571-8AFE-481A0165AFF5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -90,11 +90,12 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{99460D7C-AEA1-46DC-9A87-145F311B5DDE}"
+      DTS:DTSID="{652B3F1B-53DD-4E0E-9809-A799309F912E}"
       DTS:From="Package\Limpeza das Tabelas (PROD_ESCOLA) e importação PRODUTOS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Divisão Produtos (BASIC e PREMIUM)" />
+      DTS:To="Package\Divisão Produtos (BASIC e PREMIUM)"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
@@ -102,7 +103,8 @@
       DTS:From="Package\Divisão Produtos (BASIC e PREMIUM)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Importação CLIENTES" />
+      DTS:To="Package\Importação CLIENTES"
+      DTS:Value="2" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -110,7 +112,8 @@
       DTS:From="Package\Importação CLIENTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Importação VENDAS" />
+      DTS:To="Package\Importação VENDAS"
+      DTS:Value="2" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -123,22 +126,23 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph">
-        <AnnotationLayout
-          Text="Pacote Principal (MAIN)&#xD;&#xA;   - Realiza a orquestração de TODOS os pacotes"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="284,60"
-          Id="5f30b708-b611-4100-8123-cc6d063290dc"
-          TopLeft="50,27" />
-        <NodeLayout
-          Size="408,42"
-          Id="Package\Limpeza das Tabelas (PROD_ESCOLA) e importação PRODUTOS"
-          TopLeft="227,105" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="269,42"
           Id="Package\Divisão Produtos (BASIC e PREMIUM)"
           TopLeft="293,194" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Importação CLIENTES"
+          TopLeft="331,287" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Importação VENDAS"
+          TopLeft="336,380" />
+        <NodeLayout
+          Size="408,42"
+          Id="Package\Limpeza das Tabelas (PROD_ESCOLA) e importação PRODUTOS"
+          TopLeft="227,105" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="429.25,147">
@@ -158,13 +162,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-23.01955078125,14.68994140625,46.0391015625,10.1201171875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="191,42"
-          Id="Package\Importação CLIENTES"
-          TopLeft="331,287" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="427,236">
@@ -184,13 +186,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-23.01955078125,16.68994140625,46.0391015625,10.1201171875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Importação VENDAS"
-          TopLeft="336,380" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="426.75,329">
@@ -210,9 +210,18 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-23.01955078125,16.68994140625,46.0391015625,10.1201171875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Pacote Principal (MAIN)&#xA;   - Realiza a orquestração de TODOS os pacotes"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="284,56"
+          Id="5f30b708-b611-4100-8123-cc6d063290dc"
+          TopLeft="50,27" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
