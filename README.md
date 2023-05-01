@@ -14,3 +14,4 @@
   + Preco_Produto
 
 3 - Realizado Loop de Truncate nas tabelas
+  + Incluido script SQL (Control Flow) => 'Limpar Tabelas'
