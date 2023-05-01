@@ -12,3 +12,5 @@
   + Marca_Produto  
   + Ano_Produto
   + Preco_Produto
+
+3 - Realizado Loop de Truncate nas tabelas
