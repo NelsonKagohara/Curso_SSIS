@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="6- Importando Dados Vendas"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{4447CADC-9A73-42D1-8953-56BAF4BC986B}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{7DD14592-7B37-4B47-92D5-112AE28C9BEB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -163,7 +163,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Data_Pagamento]</property>
+                  name="OpenRowset">[dbo].[Vendas_Data_Pagamento]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -286,7 +286,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Produto_Vendido]</property>
+                  name="OpenRowset">[dbo].[Vendas_Produto_Vendido]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -409,7 +409,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Qtde_Vendida]</property>
+                  name="OpenRowset">[dbo].[Vendas_Qtde_Vendida]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -1011,25 +1011,21 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="133,42"
-          Id="Package\Fluxo de Vendas\Vendas_ID"
-          TopLeft="266.826118326119,72.1356421356421" />
-        <NodeLayout
           Size="213,42"
           Id="Package\Fluxo de Vendas\PRD_ESCOLA_Vendas_ID"
           TopLeft="220.492784992785,156.635642135642" />
         <NodeLayout
-          Size="207,42"
-          Id="Package\Fluxo de Vendas\Produto_Vendido_Vendas"
-          TopLeft="524.146825396826,73.8805916305916" />
+          Size="273,42"
+          Id="Package\Fluxo de Vendas\PRD_ESCOLA_Qtde_Vendida_Vendas"
+          TopLeft="524.525613275614,325.077561327562" />
         <NodeLayout
           Size="287,42"
           Id="Package\Fluxo de Vendas\PRD_ESCOLA_Produto_Vendido_Vendas"
           TopLeft="485.813492063493,158.713924963925" />
         <NodeLayout
-          Size="212,42"
-          Id="Package\Fluxo de Vendas\Data_Pagamernto_Vendas"
-          TopLeft="133.374098124096,226.729076479076" />
+          Size="133,42"
+          Id="Package\Fluxo de Vendas\Vendas_ID"
+          TopLeft="266.826118326119,72.1356421356421" />
         <NodeLayout
           Size="288,42"
           Id="Package\Fluxo de Vendas\PRD_ESCOLA_Data_Pagamento_Vendas"
@@ -1039,52 +1035,27 @@
           Id="Package\Fluxo de Vendas\Qtde_Vendida_Vendas"
           TopLeft="558.616522366523,239.25937950938" />
         <NodeLayout
-          Size="273,42"
-          Id="Package\Fluxo de Vendas\PRD_ESCOLA_Qtde_Vendida_Vendas"
-          TopLeft="524.525613275614,325.077561327562" />
+          Size="212,42"
+          Id="Package\Fluxo de Vendas\Data_Pagamernto_Vendas"
+          TopLeft="133.374098124096,226.729076479076" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Fluxo de Vendas\Produto_Vendido_Vendas"
+          TopLeft="524.146825396826,73.8805916305916" />
         <EdgeLayout
-          Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel]"
-          TopLeft="330.159451659452,114.135642135642">
+          Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel3]"
+          TopLeft="658.071067821069,281.25937950938">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.4999999999999"
+              EndConnector="0,43.8181818181819"
               Start="0,0"
-              End="0,34.9999999999999">
+              End="0,36.3181818181819">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.9999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="Importar tabelas -&gt; VENDAS (planilha Marketing)&#xA;  Vendas_ID&#xA;  Produtos_Vendidos_Vendas&#xA;  Data_Pagamento_Vendas&#xA;  Qtde_Vendida_Vendas"
-          ParentId="Package\Fluxo de Vendas"
-          FontInfo="{assembly:Null}"
-          Size="290,104"
-          Id="5b518129-fc07-403c-aa9a-4598112add26"
-          TopLeft="21.9675324675325,2.13347763347754" />
-        <EdgeLayout
-          Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel1]"
-          TopLeft="628.480158730159,115.880591630592">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.8333333333332"
-              Start="0,0"
-              End="0,35.3333333333332">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.3333333333332" />
+                    End="0,36.3181818181819" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1116,19 +1087,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel3]"
-          TopLeft="658.071067821069,281.25937950938">
+          Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel1]"
+          TopLeft="628.480158730159,115.880591630592">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.8181818181819"
+              EndConnector="0,42.8333333333332"
               Start="0,0"
-              End="0,36.3181818181819">
+              End="0,35.3333333333332">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.3181818181819" />
+                    End="0,35.3333333333332" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1137,22 +1108,38 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel]"
+          TopLeft="330.159451659452,114.135642135642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4999999999999"
+              Start="0,0"
+              End="0,34.9999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Importar tabelas -&gt; VENDAS (planilha Marketing)&#xA;  Vendas_ID&#xA;  Produtos_Vendidos_Vendas&#xA;  Data_Pagamento_Vendas&#xA;  Qtde_Vendida_Vendas"
+          ParentId="Package\Fluxo de Vendas"
+          FontInfo="{assembly:Null}"
+          Size="290,104"
+          Id="5b518129-fc07-403c-aa9a-4598112add26"
+          TopLeft="21.9675324675325,2.13347763347754" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\Vendas_ID">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Vendas_ID">
     <Properties>
@@ -1167,7 +1154,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\Produto_Vendido_Vendas">
+    design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Qtde_Vendida_Vendas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1193,7 +1180,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\Data_Pagamernto_Vendas">
+    design-time-name="Package\Fluxo de Vendas\Vendas_ID">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1232,7 +1219,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Qtde_Vendida_Vendas">
+    design-time-name="Package\Fluxo de Vendas\Data_Pagamernto_Vendas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo de Vendas\Produto_Vendido_Vendas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

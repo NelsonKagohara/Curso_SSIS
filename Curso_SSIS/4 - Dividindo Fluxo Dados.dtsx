@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="4 - Dividindo Fluxo Dados"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{0BD67EB3-25C5-4794-A839-609714322939}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{8E824F93-88E0-452C-B1FA-2691F8D582FF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -149,7 +149,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[dbo].[Preco_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Preco]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -548,30 +548,23 @@
     design-time-name="Package\Fluxo Categoria_Precos_Produtos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic"
-          TopLeft="72,251" />
-        <AnnotationLayout
-          Text="Requisitos:&#xD;&#xA;1- Produtos acima ou iguak de $50.000 -&gt; Premium&#xD;&#xA;2- Produtos abaixo de $50.000 -&gt; Basic&#xD;&#xA;3- Criat uma tabela para cada categoria no Database&#xD;&#xA;4- Dividir o Fluxo de Dados"
-          ParentId="Package\Fluxo Categoria_Precos_Produtos"
-          FontInfo="{assembly:Null}"
-          Size="308,104"
-          Id="9cdb75de-4fb3-4407-97a5-7a6c13404c0d"
-          TopLeft="546,77" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto"
-          TopLeft="205,62" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168,42"
           Id="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium"
           TopLeft="330,254" />
         <NodeLayout
+          Size="151,42"
+          Id="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic"
+          TopLeft="72,251" />
+        <NodeLayout
           Size="160,42"
           Id="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco"
           TopLeft="195,142" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto"
+          TopLeft="205,62" />
         <EdgeLayout
           Id="Package\Fluxo Categoria_Precos_Produtos.Paths[Saída de Origem OLE DB]"
           TopLeft="278,104">
@@ -592,42 +585,6 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fluxo Categoria_Precos_Produtos.Paths[Produto_Basic]"
-          TopLeft="249.666666666667,184">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-102.166666666667,67"
-              Start="0,0"
-              End="-102.166666666667,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.1980198019802" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.1980198019802"
-                    Point2="0,27.1980198019802"
-                    Point3="-4,27.1980198019802" />
-                  <mssgle:LineSegment
-                    End="-98.1666666666667,27.1980198019802" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-98.1666666666667,27.1980198019802"
-                    Point2="-102.166666666667,27.1980198019802"
-                    Point3="-102.166666666667,31.1980198019802" />
-                  <mssgle:LineSegment
-                    End="-102.166666666667,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-82.8213606770833,32.1980198019802,63.4760546875,11.0625"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -666,9 +623,65 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fluxo Categoria_Precos_Produtos.Paths[Produto_Basic]"
+          TopLeft="249.666666666667,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.166666666667,67"
+              Start="0,0"
+              End="-102.166666666667,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.1980198019802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.1980198019802"
+                    Point2="0,27.1980198019802"
+                    Point3="-4,27.1980198019802" />
+                  <mssgle:LineSegment
+                    End="-98.1666666666667,27.1980198019802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.1666666666667,27.1980198019802"
+                    Point2="-102.166666666667,27.1980198019802"
+                    Point3="-102.166666666667,31.1980198019802" />
+                  <mssgle:LineSegment
+                    End="-102.166666666667,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-82.8213606770833,32.1980198019802,63.4760546875,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Requisitos:&#xA;1- Produtos acima ou iguak de $50.000 -&gt; Premium&#xA;2- Produtos abaixo de $50.000 -&gt; Basic&#xA;3- Criat uma tabela para cada categoria no Database&#xA;4- Dividir o Fluxo de Dados"
+          ParentId="Package\Fluxo Categoria_Precos_Produtos"
+          FontInfo="{assembly:Null}"
+          Size="308,104"
+          Id="9cdb75de-4fb3-4407-97a5-7a6c13404c0d"
+          TopLeft="546,77" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic">
     <Properties>
@@ -684,19 +697,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

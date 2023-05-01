@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="3- Criando Loop de Truncate"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{C2DDE1BF-9CDB-440C-8FE9-8E953AEB2FA7}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{E472D378-6BE1-46D2-A357-10CF806DB5A5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -404,7 +404,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Ano_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Ano]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -529,7 +529,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Marca_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Marca]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -654,7 +654,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Modelo_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Modelo]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -779,7 +779,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Preco_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Preco]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."

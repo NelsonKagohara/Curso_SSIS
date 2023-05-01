@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="7- Criando Pacote Main  Prncipal"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{58A59610-83E9-495A-A41A-0E725D6DCDB6}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{11E40F7A-9971-464C-851D-F616B81990AB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

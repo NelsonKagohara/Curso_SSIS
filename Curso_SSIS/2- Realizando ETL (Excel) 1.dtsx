@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/16/2023 5:00:14 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="2- Realizando ETL  Excel"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{EF44B495-6C7C-43EC-BCC3-3FFBAFBEB30F}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{B755A864-9E97-4D4D-BFD2-D8D400541184}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -418,7 +418,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Ano_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Ano]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -543,7 +543,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Marca_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Marca]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -668,7 +668,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Modelo_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Modelo]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -793,7 +793,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Preco_Produto]</property>
+                  name="OpenRowset">[dbo].[Produto_Preco]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -1284,10 +1284,6 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="232,42"
-          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto"
-          TopLeft="528.393939393939,338.378787878788" />
-        <NodeLayout
           Size="240,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto"
           TopLeft="397.272727272727,174.818181818182" />
@@ -1300,21 +1296,55 @@
           Id="Package\Fluxo Planilha Marketing -&gt; Database\Produto_ID"
           TopLeft="208.272727272727,97.8181818181818" />
         <NodeLayout
-          Size="160,42"
-          Id="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto"
-          TopLeft="435.272727272727,88.8181818181818" />
-        <NodeLayout
           Size="152,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto"
           TopLeft="563.863636363636,256.212121212121" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto"
+          TopLeft="170,352" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID"
+          TopLeft="167.272727272727,172.818181818182" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto"
+          TopLeft="435.272727272727,88.8181818181818" />
         <NodeLayout
           Size="154,42"
           Id="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto"
           TopLeft="703.772727272727,82.4848484848485" />
         <NodeLayout
-          Size="215,42"
-          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Produto_ID"
-          TopLeft="167.272727272727,172.818181818182" />
+          Size="232,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto"
+          TopLeft="528.393939393939,338.378787878788" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto"
+          TopLeft="203,267" />
+        <EdgeLayout
+          Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel4]"
+          TopLeft="278,309">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel3]"
           TopLeft="642.128787878788,298.212121212121">
@@ -1365,14 +1395,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44"
+              EndConnector="0,44.0000000000002"
               Start="0,0"
-              End="0,36.5">
+              End="0,36.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
+                    End="0,36.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1410,52 +1440,9 @@
           Size="166,120"
           Id="d3f2cb6c-5895-4103-8c16-bb52a7514b1b"
           TopLeft="18.2727272727273,93.8181818181818" />
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto"
-          TopLeft="203,267" />
-        <NodeLayout
-          Size="223,42"
-          Id="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto"
-          TopLeft="170,352" />
-        <EdgeLayout
-          Id="Package\Fluxo Planilha Marketing -&gt; Database.Paths[Saída de Origem do Excel4]"
-          TopLeft="278,309">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43"
-              Start="0,0"
-              End="0,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Modelo_Produto">
     <Properties>
@@ -1496,19 +1483,6 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Preco_Produto">
     <Properties>
       <Property>
@@ -1522,7 +1496,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto">
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1548,7 +1522,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto">
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Modelo_Produto">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1561,7 +1535,33 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Ano_Produto">
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Marca_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\PRD_ESCOLA_Preco_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Planilha Marketing -&gt; Database\Ano_Produto">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
