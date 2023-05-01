@@ -1,0 +1,712 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/1/2023 3:36:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-01UNAR94"
+  DTS:CreatorName="LAPTOP-01UNAR94\nelso"
+  DTS:DTSID="{526DD8FA-03DA-47E2-950F-EF3BD53C953B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="4 - Dividindo Fluxo Dados"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{0BD67EB3-25C5-4794-A839-609714322939}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3AEE9AAF-F2DD-404B-9A65-7A50309D0B56}"
+      DTS:ObjectName="LAPTOP-01UNAR94.PRD_ESCOLA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-01UNAR94;Initial Catalog=PRD_ESCOLA;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-4 - Dividindo Fluxo Dados-{3AEE9AAF-F2DD-404B-9A65-7A50309D0B56}LAPTOP-01UNAR94.PRD_ESCOLA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Fluxo Categoria_Precos_Produtos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{DFE9E7D3-C9E9-4334-B391-153928A7C63D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fluxo Categoria_Precos_Produtos">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Divisão Condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Encaminha colunas de dados para saídas diferentes, dependendo do conteúdo dos dados. Use condições (expressões do SSIS) para especificar quais linhas são encaminhadas. Por exemplo, separe os registros que precisam ser limpos daqueles que estão prontos para serem carregados ou encaminhe somente um subconjunto de registros."
+              name="Condicao_Preco"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Inputs[Entrada de Divisão Condicional]"
+                  description="Entrada para a Transformação Divisão Condicional"
+                  name="Entrada de Divisão Condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Inputs[Entrada de Divisão Condicional].Columns[price]"
+                      cachedDataType="cy"
+                      cachedName="price"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[price]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Produto_Basic]"
+                  description="Saída 1 da Transformação Divisão Condicional"
+                  errorOrTruncationOperation="Computação"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Produto_Basic"
+                  synchronousInputId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Inputs[Entrada de Divisão Condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                      name="Expression">#{Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[price]} &lt; 50000</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                      expressionType="Notify"
+                      name="FriendlyExpression">price &lt; 50000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Produto_Premium]"
+                  description="Saída Padrão da Transformação Divisão Condicional"
+                  exclusionGroup="1"
+                  name="Produto_Premium"
+                  synchronousInputId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Inputs[Entrada de Divisão Condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Saída de Erro de Divisão Condicional]"
+                  description="Saída de Erro da Transformação Divisão Condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Divisão Condicional"
+                  synchronousInputId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Inputs[Entrada de Divisão Condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Preco_Produto"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[Preco_Produto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[product_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[product_id]"
+                      name="product_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[price]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].ExternalColumns[price]"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[price]"
+                      name="price"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].ExternalColumns[price]"
+                      dataType="cy"
+                      name="price" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB].Columns[product_id]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB].Columns[product_id]"
+                      name="product_id" />
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB].Columns[price]"
+                      dataType="cy"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB].Columns[price]"
+                      name="price" />
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Produto_Basic"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[Produto_Basic]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB].Columns[price]"
+                      cachedDataType="cy"
+                      cachedName="price"
+                      externalMetadataColumnId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB].ExternalColumns[price]"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[price]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB].ExternalColumns[price]"
+                      dataType="cy"
+                      name="price" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Produto_Premium"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[Produto_Premium]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB].Columns[product_id]"
+                      cachedDataType="i4"
+                      cachedName="product_id"
+                      externalMetadataColumnId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB].Columns[price]"
+                      cachedDataType="cy"
+                      cachedName="price"
+                      externalMetadataColumnId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB].ExternalColumns[price]"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB].Columns[price]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB].ExternalColumns[product_id]"
+                      dataType="i4"
+                      name="product_id" />
+                    <externalMetadataColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB].ExternalColumns[price]"
+                      dataType="cy"
+                      name="price" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Fluxo Categoria_Precos_Produtos.Paths[Produto_Basic]"
+              endId="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic.Inputs[Entrada de Destino OLE DB]"
+              name="Produto_Basic"
+              startId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Produto_Basic]" />
+            <path
+              refId="Package\Fluxo Categoria_Precos_Produtos.Paths[Produto_Premium]"
+              endId="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium.Inputs[Entrada de Destino OLE DB]"
+              name="Produto_Premium"
+              startId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Outputs[Produto_Premium]" />
+            <path
+              refId="Package\Fluxo Categoria_Precos_Produtos.Paths[Saída de Origem OLE DB]"
+              endId="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco.Inputs[Entrada de Divisão Condicional]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Fluxo Categoria_Precos_Produtos"
+          TopLeft="175.5,100.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Fluxo Categoria_Precos_Produtos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic"
+          TopLeft="72,251" />
+        <AnnotationLayout
+          Text="Requisitos:&#xD;&#xA;1- Produtos acima ou iguak de $50.000 -&gt; Premium&#xD;&#xA;2- Produtos abaixo de $50.000 -&gt; Basic&#xD;&#xA;3- Criat uma tabela para cada categoria no Database&#xD;&#xA;4- Dividir o Fluxo de Dados"
+          ParentId="Package\Fluxo Categoria_Precos_Produtos"
+          FontInfo="{assembly:Null}"
+          Size="308,104"
+          Id="9cdb75de-4fb3-4407-97a5-7a6c13404c0d"
+          TopLeft="546,77" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto"
+          TopLeft="205,62" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium"
+          TopLeft="330,254" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Fluxo Categoria_Precos_Produtos\Condicao_Preco"
+          TopLeft="195,142" />
+        <EdgeLayout
+          Id="Package\Fluxo Categoria_Precos_Produtos.Paths[Saída de Origem OLE DB]"
+          TopLeft="278,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fluxo Categoria_Precos_Produtos.Paths[Produto_Basic]"
+          TopLeft="249.666666666667,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.166666666667,67"
+              Start="0,0"
+              End="-102.166666666667,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.1980198019802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.1980198019802"
+                    Point2="0,27.1980198019802"
+                    Point3="-4,27.1980198019802" />
+                  <mssgle:LineSegment
+                    End="-98.1666666666667,27.1980198019802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.1666666666667,27.1980198019802"
+                    Point2="-102.166666666667,27.1980198019802"
+                    Point3="-102.166666666667,31.1980198019802" />
+                  <mssgle:LineSegment
+                    End="-102.166666666667,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-82.8213606770833,32.1980198019802,63.4760546875,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fluxo Categoria_Precos_Produtos.Paths[Produto_Premium]"
+          TopLeft="300.333333333333,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="113.666666666667,70"
+              Start="0,0"
+              End="113.666666666667,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4158415841584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4158415841584"
+                    Point2="0,28.4158415841584"
+                    Point3="4,28.4158415841584" />
+                  <mssgle:LineSegment
+                    End="109.666666666667,28.4158415841584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="109.666666666667,28.4158415841584"
+                    Point2="113.666666666667,28.4158415841584"
+                    Point3="113.666666666667,32.4158415841584" />
+                  <mssgle:LineSegment
+                    End="113.666666666667,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="17.0552669270833,33.4158415841584,79.5561328125,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Categoria_Precos_Produtos\Produto_Basic">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Categoria_Precos_Produtos\Preco_Produto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo Categoria_Precos_Produtos\Produto_Premium">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

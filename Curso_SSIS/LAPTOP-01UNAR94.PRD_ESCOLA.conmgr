@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LAPTOP-01UNAR94.PRD_ESCOLA"
+  DTS:DTSID="{3BC212C2-DEE7-47C9-9648-5512D81321F4}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=LAPTOP-01UNAR94;Initial Catalog=PRD_ESCOLA;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Criando Conectores-{3BC212C2-DEE7-47C9-9648-5512D81321F4}LAPTOP-01UNAR94.PRD_ESCOLA;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
