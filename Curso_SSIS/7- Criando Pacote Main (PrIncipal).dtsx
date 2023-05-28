@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-01UNAR94"
   DTS:CreatorName="LAPTOP-01UNAR94\nelso"
-  DTS:DTSID="{3B49F483-3898-4997-9442-95F3DF304F44}"
+  DTS:DTSID="{37FD7E8D-5048-445D-858C-2A152845D9CA}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="1046"
-  DTS:ObjectName="7- Criando Pacote Main  Prncipal"
+  DTS:ObjectName="7- Criando Pacote Main  PrIncipal"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{B1B77AC5-7769-4571-8AFE-481A0165AFF5}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{0421A705-070B-4615-ACD0-31CE8AD085AD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -130,22 +130,22 @@
         <NodeLayout
           Size="269,42"
           Id="Package\Divisão Produtos (BASIC e PREMIUM)"
-          TopLeft="293,194" />
+          TopLeft="426,133" />
         <NodeLayout
           Size="191,42"
           Id="Package\Importação CLIENTES"
-          TopLeft="331,287" />
+          TopLeft="464,226" />
         <NodeLayout
           Size="182,42"
           Id="Package\Importação VENDAS"
-          TopLeft="336,380" />
+          TopLeft="469,319" />
         <NodeLayout
           Size="408,42"
           Id="Package\Limpeza das Tabelas (PROD_ESCOLA) e importação PRODUTOS"
-          TopLeft="227,105" />
+          TopLeft="360,44" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="429.25,147">
+          TopLeft="562.25,86">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -169,7 +169,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="427,236">
+          TopLeft="560,175">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -193,7 +193,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="426.75,329">
+          TopLeft="559.75,268">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

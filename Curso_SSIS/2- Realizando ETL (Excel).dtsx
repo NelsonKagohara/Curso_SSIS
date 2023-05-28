@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-01UNAR94"
   DTS:CreatorName="LAPTOP-01UNAR94\nelso"
-  DTS:DTSID="{97BD5911-558A-4946-8FB6-DE07911E30DF}"
+  DTS:DTSID="{2713AE2A-1FAF-4831-9484-18BD0201CCCF}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="1046"
   DTS:ObjectName="2- Realizando ETL  Excel"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{B755A864-9E97-4D4D-BFD2-D8D400541184}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{A687B14D-2061-4457-B9B2-1C4EC5510BEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
