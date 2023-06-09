@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="6- Importando Dados Vendas"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{EBC7E934-88C3-4C14-A8DE-1164AC486211}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{0B41F487-B55C-430E-8A2B-0C734007C66E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -32,11 +32,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Fluxo de Vendas\Cliente_Comprou"
+              refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
               description="Origem do Excel"
-              name="Cliente_Comprou"
+              name="Cliente_Comprou_Vendas"
               usesDispositions="true"
               version="1">
               <properties>
@@ -73,7 +73,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Fluxo de Vendas\Cliente_Comprou.Connections[OleDbConnection]"
+                  refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Connections[OleDbConnection]"
                   connectionManagerID="{B8E3EBF0-07B2-4BFB-A522-C212265F86E3}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Planilha Marketing]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
@@ -81,65 +81,65 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel]"
+                  refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel]"
                   name="Saída de Origem do Excel">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].Columns[Venda_Id]"
+                      refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].Columns[Venda_Id]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversão"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].ExternalColumns[Venda_Id]"
-                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].Columns[Venda_Id]"
+                      externalMetadataColumnId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].ExternalColumns[Venda_Id]"
+                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].Columns[Venda_Id]"
                       name="Venda_Id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].Columns[Cliente_id]"
+                      refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].Columns[Cliente_id]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversão"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente_id]"
-                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].Columns[Cliente_id]"
+                      externalMetadataColumnId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente_id]"
+                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].Columns[Cliente_id]"
                       name="Cliente_id"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].ExternalColumns[Venda_Id]"
+                      refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].ExternalColumns[Venda_Id]"
                       dataType="r8"
                       name="Venda_Id" />
                     <externalMetadataColumn
-                      refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente_id]"
+                      refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].ExternalColumns[Cliente_id]"
                       dataType="r8"
                       name="Cliente_id" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel]"
+                  refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel]"
                   isErrorOut="true"
                   name="Saída de Erro de Origem do Excel">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel].Columns[Venda_Id]"
+                      refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel].Columns[Venda_Id]"
                       dataType="r8"
-                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel].Columns[Venda_Id]"
+                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel].Columns[Venda_Id]"
                       name="Venda_Id" />
                     <outputColumn
-                      refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente_id]"
+                      refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente_id]"
                       dataType="r8"
-                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente_id]"
+                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel].Columns[Cliente_id]"
                       name="Cliente_id" />
                     <outputColumn
-                      refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      refId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -264,11 +264,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou"
+              refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
               description="Destino OLE DB"
-              name="PRD_ESCOLA_Cliente_Comprou"
+              name="PRD_ESCOLA_Cliente_Comprou_Vendas"
               usesDispositions="true"
               version="4">
               <properties>
@@ -279,7 +279,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                  name="OpenRowset">[Cliente_Comprou]</property>
+                  name="OpenRowset">[Vendas_Cliente_Comprou]</property>
                 <property
                   dataType="System.String"
                   description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -321,7 +321,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Connections[OleDbConnection]"
+                  refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Connections[OleDbConnection]"
                   connectionManagerID="{3BC212C2-DEE7-47C9-9648-5512D81321F4}:external"
                   connectionManagerRefId="Project.ConnectionManagers[LAPTOP-01UNAR94.PRD_ESCOLA]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
@@ -329,33 +329,33 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB]"
+                  refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB]"
                   errorOrTruncationOperation="Inserir"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de Destino OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB].Columns[Venda_Id]"
+                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB].Columns[Venda_Id]"
                       cachedDataType="r8"
                       cachedName="Venda_Id"
-                      externalMetadataColumnId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB].ExternalColumns[Venda_Id]"
-                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].Columns[Venda_Id]" />
+                      externalMetadataColumnId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB].ExternalColumns[Venda_Id]"
+                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].Columns[Venda_Id]" />
                     <inputColumn
-                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB].Columns[Cliente_id]"
+                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB].Columns[Cliente_id]"
                       cachedDataType="r8"
                       cachedName="Cliente_id"
-                      externalMetadataColumnId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente_id]"
-                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel].Columns[Cliente_id]" />
+                      externalMetadataColumnId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente_id]"
+                      lineageId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel].Columns[Cliente_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB].ExternalColumns[Venda_Id]"
+                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB].ExternalColumns[Venda_Id]"
                       dataType="i4"
                       name="Venda_Id" />
                     <externalMetadataColumn
-                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente_id]"
+                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB].ExternalColumns[Cliente_id]"
                       dataType="i4"
                       name="Cliente_id" />
                   </externalMetadataColumns>
@@ -363,22 +363,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Outputs[Saída de Erro de Destino OLE DB]"
+                  refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Outputs[Saída de Erro de Destino OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Saída de Erro de Destino OLE DB"
-                  synchronousInputId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB]">
+                  synchronousInputId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1222,9 +1222,9 @@
               startId="Package\Fluxo de Vendas\Qtde_Vendida_Vendas.Outputs[Saída de Origem do Excel]" />
             <path
               refId="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel4]"
-              endId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou.Inputs[Entrada de Destino OLE DB]"
+              endId="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas.Inputs[Entrada de Destino OLE DB]"
               name="Saída de Origem do Excel"
-              startId="Package\Fluxo de Vendas\Cliente_Comprou.Outputs[Saída de Origem do Excel]" />
+              startId="Package\Fluxo de Vendas\Cliente_Comprou_Vendas.Outputs[Saída de Origem do Excel]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1255,14 +1255,6 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="213,42"
-          Id="Package\Fluxo de Vendas\PRD_ESCOLA_Vendas_ID"
-          TopLeft="218.270562770563,135.524531024531" />
-        <NodeLayout
-          Size="273,42"
-          Id="Package\Fluxo de Vendas\PRD_ESCOLA_Qtde_Vendida_Vendas"
-          TopLeft="354.525613275614,326.077561327562" />
-        <NodeLayout
           Size="287,42"
           Id="Package\Fluxo de Vendas\PRD_ESCOLA_Produto_Vendido_Vendas"
           TopLeft="529.146825396826,133.158369408369" />
@@ -1279,13 +1271,51 @@
           Id="Package\Fluxo de Vendas\Qtde_Vendida_Vendas"
           TopLeft="388.616522366523,240.25937950938" />
         <NodeLayout
+          Size="207,42"
+          Id="Package\Fluxo de Vendas\Produto_Vendido_Vendas"
+          TopLeft="567.480158730159,48.325036075036" />
+        <NodeLayout
+          Size="288,42"
+          Id="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas"
+          TopLeft="688.444444444444,319.111111111111" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Fluxo de Vendas\PRD_ESCOLA_Vendas_ID"
+          TopLeft="218.270562770563,135.524531024531" />
+        <NodeLayout
           Size="212,42"
           Id="Package\Fluxo de Vendas\Data_Pagamernto_Vendas"
           TopLeft="63.374098124096,225.729076479076" />
         <NodeLayout
-          Size="207,42"
-          Id="Package\Fluxo de Vendas\Produto_Vendido_Vendas"
-          TopLeft="567.480158730159,48.325036075036" />
+          Size="208,42"
+          Id="Package\Fluxo de Vendas\Cliente_Comprou_Vendas"
+          TopLeft="723.333333333333,242.666666666667" />
+        <NodeLayout
+          Size="273,42"
+          Id="Package\Fluxo de Vendas\PRD_ESCOLA_Qtde_Vendida_Vendas"
+          TopLeft="354.525613275614,326.077561327562" />
+        <EdgeLayout
+          Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel4]"
+          TopLeft="829.888888888888,284.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.444444444444"
+              Start="0,0"
+              End="0,26.944444444444">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.944444444444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel3]"
           TopLeft="488.071067821068,282.25937950938">
@@ -1375,71 +1405,15 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="Importar tabelas -&gt; VENDAS (planilha Marketing)&#xA;  Vendas_ID&#xA;  Produtos_Vendidos_Vendas&#xA;  Data_Pagamento_Vendas&#xA;  Qtde_Vendida_Vendas&#xD;&#xA;  Cliente_Comprou"
+          Text="Importar tabelas -&gt; VENDAS (planilha Marketing)&#xA;  Vendas_ID&#xA;  Produtos_Vendidos_Vendas&#xA;  Data_Pagamento_Vendas&#xA;  Qtde_Vendida_Vendas&#xA;  Cliente_Comprou"
           ParentId="Package\Fluxo de Vendas"
           FontInfo="{assembly:Null}"
           Size="290,120"
           Id="5b518129-fc07-403c-aa9a-4598112add26"
           TopLeft="21.9675324675325,2.13347763347754" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Fluxo de Vendas\Cliente_Comprou"
-          TopLeft="723.333333333333,242.666666666667" />
-        <NodeLayout
-          Size="245,42"
-          Id="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou"
-          TopLeft="688.444444444444,319.111111111111" />
-        <EdgeLayout
-          Id="Package\Fluxo de Vendas.Paths[Saída de Origem do Excel4]"
-          TopLeft="808.388888888889,284.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.4444444444443"
-              Start="0,0"
-              End="0,26.9444444444443">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.9444444444443" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Vendas_ID">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Qtde_Vendida_Vendas">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Produto_Vendido_Vendas">
     <Properties>
@@ -1493,19 +1467,6 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\Data_Pagamernto_Vendas">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Fluxo de Vendas\Produto_Vendido_Vendas">
     <Properties>
       <Property>
@@ -1519,7 +1480,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\Cliente_Comprou">
+    design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou_Vendas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1532,7 +1493,46 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Cliente_Comprou">
+    design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Vendas_ID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo de Vendas\Data_Pagamernto_Vendas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo de Vendas\Cliente_Comprou_Vendas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fluxo de Vendas\PRD_ESCOLA_Qtde_Vendida_Vendas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

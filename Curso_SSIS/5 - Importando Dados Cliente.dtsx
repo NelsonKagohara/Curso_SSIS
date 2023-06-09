@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="5 - Importando Dados Cliente"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{97AAFA50-53B9-41B4-BF2C-8EFDDA154C02}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{BF6277E4-7FB7-4CB6-AD3F-5E103656BB31}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1420,7 +1420,7 @@
                       name="Cliente_id" />
                     <externalMetadataColumn
                       refId="Package\Fluxo Clientes\PRD_ESCOLA_Data_Nascimento_Cliente.Inputs[Entrada de Destino OLE DB].ExternalColumns[birth_date]"
-                      dataType="dbDate"
+                      dataType="dbTimeStamp"
                       name="birth_date" />
                   </externalMetadataColumns>
                 </input>
